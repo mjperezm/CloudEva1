@@ -23,17 +23,17 @@ services:
     image: node:22-alpine
     container_name: pedidos360-frontend
     working_dir: /app
-    command: npm start
+    command: sh -c "npm install && npm start"
     ports:
       - "4200:4200"
     volumes:
       - ./frontend/pedidos360-app:/app
     environment:
       - PORT=4200
-    networks:
-      - pedidos360-network
     depends_on:
       - backend
+    networks:
+      - pedidos360-network
 
 networks:
   pedidos360-network:
