@@ -20,7 +20,7 @@ services:
       retries: 3
 
   frontend:
-    image: node:21-alpine
+    image: node:22-alpine
     container_name: pedidos360-frontend
     working_dir: /app
     command: npm start
